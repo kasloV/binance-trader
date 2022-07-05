@@ -1,0 +1,3 @@
+[submodule "binance-connector"]
+	path = binance-connector
+	url = git@github.com:kasloV/binance-connector.git

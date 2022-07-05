@@ -1,0 +1,6 @@
+akhq:
+  connections:
+    test-1:
+      properties:
+        bootstrap.servers: "kafka:9092"
+ 

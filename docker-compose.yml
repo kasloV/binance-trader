@@ -15,6 +15,7 @@ services:
       - "29092:29092"
     volumes:
       - "kafka_data:/bitnami"
+      - '/home/arturg/repos/binance-trader/kafka/topics.sh:/docker-entrypoint-initdb.d/topics.sh'
     environment:
       # - KAFKA_BROKER_ID=1
       - ALLOW_PLAINTEXT_LISTENER=yes

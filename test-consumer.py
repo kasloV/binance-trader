@@ -4,13 +4,15 @@ from json import loads
 
 # consumer = KafkaConsumer('test-1', bootstrap_servers=['localhost:29092'], auto_offset_reset='earliest')
 consumer = KafkaConsumer(
-    'test-1',
+    'book',
     bootstrap_servers='localhost:29092',
-    auto_offset_reset='earliest',
-    enable_auto_commit=True)
+    enable_auto_commit=True,
+    value_deserializer=lambda x: loads(x.decode('utf-8')))
 
+counter = 0
 for message in consumer:
-    print(message)
+    print(counter)
+    counter = counter + 1
 # consumer.subscribe(['test'], listener=lambda x: print(x))
 
 print('end')

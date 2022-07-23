@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  akhq:
+    image: tchiotludo/akhq
+    ports: 
+      - '8080:8080'
+    volumes:
+      - '/home/arturg/repos/binance-trader/akhq/application.yml:/app/application.yml'
+    depends_on:
+      - kafka

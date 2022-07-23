@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  binance-connector:
+    image: binance-connector:latest
+    volumes:
+      - "binance-connector_data:/app/logs"
+    environment:
+      - ENV_DEPLOY_ENVIRONMENT=PRODUCTION
+    depends_on:
+      - kafka
+
+volumes:
+  binance-connector_data:
+    driver: local
